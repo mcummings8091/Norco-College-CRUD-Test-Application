@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project list</title>
+    <link rel="stylesheet" type="text/css" href="/css/form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Project List</h1>
+      <ul class="project-list">
+        <% for (var i in projectData) { %>
+        <li>
+          <div class="project-card">
+            <h2><%= projectData[i].Title %></h2>
+            <p><%= projectData[i].Description %></p>
+            <ul class="skills-list">
+              <% var skills = projectData[i].Skills.split(","); %> <% for (var j
+              in skills) { %>
+              <li><%= skills[j] %></li>
+              <% } %>
+            </ul>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+      <a href="/">Home</a>
+    </div>
+  </body>
+</html>
